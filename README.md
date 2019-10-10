@@ -3,7 +3,7 @@ nodejs and mongodb atlas (cloud based DB) ..using these creating a DocsAtHome se
 
 use localhost:5000
 
-"admin-bro": "^1.3.1",
+    "admin-bro": "^1.3.1",
     "admin-bro-expressjs": "^0.2.0",
     "admin-bro-mongoose": "^0.3.0",
     "bcrypt-nodejs": "0.0.3",
