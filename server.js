@@ -1,11 +1,12 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const config = require('./config/db');
+//const config = require('./config/db');
 const ejs= require('ejs');
 const engine=require('ejs-mate');
 
-mongoose.connect(config.db);
+mongoose.connect(process.env.DB_URL);
 let db = mongoose.connection;
 
 db.on('open', () => {
@@ -26,6 +27,10 @@ app.engine('ejs',engine);
 app.set('view engine','ejs');
 
 app.use(require('./routes/main'));
+/* Admin routes*/
+const adminRouter = require('./routes/admin');
+app.use('/admin',adminRouter);
+
 const port = process.env.PORT || 5000;
 
 const server = app.listen(port, () => {
