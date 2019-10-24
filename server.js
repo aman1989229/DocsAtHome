@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const ejs= require('ejs');
 const engine=require('ejs-mate');
 
-mongoose.connect(process.env.DB_URL);
+mongoose.connect(process.env.MONGODB_URI||process.env.DB_URL);
 let db = mongoose.connection;
 
 db.on('open', () => {
