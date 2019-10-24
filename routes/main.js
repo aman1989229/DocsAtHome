@@ -11,7 +11,9 @@ const User = require('../models/user');
  router.get('/',(req,res)=>{
     res.render('home');
     });
-
+    router.get('/askdoc',(req,res)=>{
+      res.render('askdoc');
+      });
     
  router.post('/signup',(req,res)=>{
     let newuser =new User({
