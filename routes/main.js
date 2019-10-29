@@ -2,8 +2,14 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
+var publicDir = require('path').join(__dirname,'/public');
+const app = express(); 
+app.use(express.static(publicDir));
+
 const User = require('../models/user');
 
+//>-----------------Routes are here----------------------<
  router.get('/signup',(req,res)=>{
  res.render('signup');
  });
@@ -23,19 +29,13 @@ const User = require('../models/user');
   name:req.body.name,
   email:req.body.email
  });
- newuser.save()
- .then((result) => {
-    res.json({
-      success: true,
-      msg: `Successfully added!`,
-      result: {
-        _id: result._id,
-        name: result.name,
-        email: result.email,
-      }
-    });
+ newuser.save();
+ 
   })
-   
- });
+
+  router.get('/afterlogin',(req,res)=>{
+    res.render('afterlogin');
+    });
+//>----------------end here-----------------------------<
 
  module.exports=router;
