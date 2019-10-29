@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const ejs= require('ejs');
 const engine=require('ejs-mate');
 
+
+
+
 mongoose.connect(process.env.MONGODB_URI||process.env.DB_URL);
 let db = mongoose.connection;
 
@@ -16,8 +19,12 @@ db.on('open', () => {
 db.on('error', (err) => {
   console.log(`Database error: ${err}`);
 });
-
+//images css & js means public path defined here for using static request
 const app = express();
+var publicDir = require('path').join(__dirname,'/public');
+app.use(express.static(publicDir));
+
+//////////////////////////////////////////////////////
 
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ 
