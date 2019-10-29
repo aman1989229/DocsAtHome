@@ -33,10 +33,17 @@ app.use(bodyParser.urlencoded({
 app.engine('ejs',engine);
 app.set('view engine','ejs');
 
+
+//>--------------------routes defined here-----------------------<
 app.use(require('./routes/main'));
+app.use('/user',require('./routes/user'));
+
 /* Admin routes*/
 const adminRouter = require('./routes/admin');
 app.use('/admin',adminRouter);
+//>--------------routes ended here-----------------------------------<
+
+
 
 const port = process.env.PORT || 5000;
 
