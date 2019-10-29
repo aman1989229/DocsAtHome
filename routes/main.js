@@ -27,10 +27,12 @@ const User = require('../models/user');
  router.post('/signup',(req,res)=>{
     let newuser =new User({
   name:req.body.name,
-  email:req.body.email
+  email:req.body.email,
+  phone:req.body.phone,
+  password:req.body.password
  });
  newuser.save();
- 
+ console.log('success');
   })
 
   router.get('/afterlogin',(req,res)=>{
