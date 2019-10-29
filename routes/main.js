@@ -8,6 +8,9 @@ const User = require('../models/user');
  res.render('signup');
  });
 
+ router.get('/signin',(req,res)=>{
+  res.render('signin');
+  });
  router.get('/',(req,res)=>{
     res.render('home');
     });
