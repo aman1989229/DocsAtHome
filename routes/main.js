@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 
 var publicDir = require('path').join(__dirname,'/public');
@@ -19,9 +20,11 @@ const User = require('../models/user');
       res.render('askdoc');
       });
     
- 
-  router.get('/afterlogin',(req,res)=>{
-    res.render('afterlogin');
+   
+  router.get('/dashboard',(req,res)=>{
+    res.render('dashboard',{
+      name: req.user.name
+    });
     });
 //>----------------end here-----------------------------<
 

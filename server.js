@@ -5,8 +5,13 @@ const bodyParser = require('body-parser');
 //const config = require('./config/db');
 const ejs= require('ejs');
 const engine=require('ejs-mate');
+const passport=require('passport');
+const passportlocal=require('passport-local');
+const flash = require('connect-flash');
+const session=require('express-session');
 
-
+//passport config
+require('./config/passport')(passport);
 
 
 mongoose.connect(process.env.MONGODB_URI||process.env.DB_URL);
@@ -33,6 +38,32 @@ app.use(bodyParser.urlencoded({
 app.engine('ejs',engine);
 app.set('view engine','ejs');
 
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+/////////////passport initialize/////////////
+app.use(passport.initialize());
+app.use(passport.session());
+
+///////////////end here/////////////////////
+
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 //>--------------------routes defined here-----------------------<
 app.use(require('./routes/main'));
