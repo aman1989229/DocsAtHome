@@ -1,5 +1,7 @@
 var router = require('express').Router();
 var User= require('../models/user');
+var bcrypt=require('bcrypt');
+var passport=require('passport');
 
 router.get('/signup',(req,res)=>{
   res.render('signup');
@@ -40,15 +42,36 @@ router.get('/signup',(req,res)=>{
                 phone,
                 password
                });
-               newuser.save();
-               console.log('success');
+               //Hash password
+               bcrypt.genSalt(10,(err,salt)=>
+               bcrypt.hash(newuser.password,salt,(err,hash)=>{
+                 if(err) throw err;
+                 newuser.password=hash;
+                 newuser.save()
+                 .then(user =>{
+                   res.redirect('/user/signin');
+                 })
+                 .catch(err =>console.log(err));
+               }))
+               
+              
              }
           });
         }
       });
 
          
+ router.post('/signin',(req,res,next)=>{
+  passport.authenticate('local', 
+  { successRedirect: '/dashboard',
+  failureRedirect: '/user/signin',
+  failureFlash: true })(req,res,next);
+ });
 
-
+ router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/user/signin');
+});
 
  module.exports=router;
