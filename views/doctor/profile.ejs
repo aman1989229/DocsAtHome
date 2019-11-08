@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+           crossorigin="anonymous">
+     
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+           crossorigin="anonymous">
+     
+        <style>
+           .custom-margin {
+              margin-top: 5vh;
+           }
+     
+           /* If you add background image it will look like transparent form*/
+           /* body {
+              background-image: url('bgimage.jpg');
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 100%;
+           }*/
+        </style>
+     
+  <title>Signup Form</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center custom-margin">
+           <div class="col-sm-6 col-md-4">
+              <!-- Add bg-primary in form tag if want form background color-->
+              <!--text-white if want text color white-->
+              
+              <form class="shadow-lg p-4 text-white bg-dark"  method="post" action="docprofile">
+                 
+                  <div class="form-group"> 
+                        <h2 class="text-center">Doctor's Details</h2>
+                        <% include ../partials/messages%> 
+                    <i class="fas fa-envelope"></i><label for="fname" class="pl-2 font-weight-bold">First Name:</label><input type="text"
+                       class="form-control" placeholder="abc" name="fname" value="<% typeof fname !='undefined' ? fname:''%>">
+                  </div>
+
+                  <div class="form-group">  
+                   
+                        <i class="fas fa-user"></i><label for="lname" class="pl-2 font-weight-bold">Last Name:</label><input type="text"
+                           class="form-control" placeholder="xyz" name="lname" value="<% typeof lname !='undefined' ?lname:''%>">
+                      </div>
+
+                      <div class="form-group">  
+                   
+                            <i class="fas fa-user"></i><label for="sex" class="pl-2 font-weight-bold">Sex:</label><input type="user"
+                               class="form-control" placeholder="M/F/O" name="sex" value="<% typeof sex !='undefined' ?sex:''%>">
+                          </div>
+
+                          <div class="form-group">  
+                   
+                                <i class="fas fa-user"></i><label for="age" class="pl-2 font-weight-bold">Age:</label><input type="user"
+                                   class="form-control" placeholder="21.." name="age" value="<% typeof age !='undefined' ?age:''%>">
+                              </div>
+                  <div class="form-group">  
+                        <i class="fas fa-user"></i><label for="Category" class="pl-2 font-weight-bold">Category:</label><input type="user"
+                           class="form-control" placeholder="Ayurveda..." name="category" value="<% typeof category !='undefined' ?category:''%>">
+                      </div>
+                    <div class="form-group">  
+                            <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <label class="input-group-text" for="speciality">Speciality</label>
+                                    </div>
+                                    <select class="custom-select" name="speciality">
+                                      <option selected>Choose...</option>
+                                      <% for(var i=0;i<list.length;i++) { %>
+                                      <option value=<%= list[i].speciality %>><%=list[i].speciality%></option>
+                                      <% }%>
+                                    </select>
+                                  </div>
+                      </div>
+                      <div class="form-group">  
+                        <i class="fas fa-envelope"></i><label for="experience" class="pl-2 font-weight-bold">Experience:</label><input type="text"
+                           class="form-control" placeholder="1,2,3.." name="experience" value="<% typeof experience !='undefined' ? experience:''%>">
+                      </div>
+                      <div class="form-group">  
+                        <i class="fas fa-envelope"></i><label for="address" class="pl-2 font-weight-bold">Address:</label><input type="textarea"
+                           class="form-control" placeholder="xyz street,Prayagraj..." name="address" value="<% typeof address !='undefined' ?address:''%>">
+                      </div>
+                       <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">Submit</button>
+              </form>
+            </div>
+        </div>
+        </div>
+  
+  <!-- JQuery Popper Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+</body>
+
+</html>
