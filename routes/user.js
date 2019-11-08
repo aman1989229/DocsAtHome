@@ -13,9 +13,9 @@ router.get('/signup',(req,res)=>{
 
    router.post('/signup',(req,res)=>{
     
-     const{name,email,phone,password}=req.body;
+     const{name,email,phone,typo,password}=req.body;
      let errors =[];
-       if(!name||!email||!phone||!password){
+       if(!name||!email||!phone||!typo||!password){
          errors.push({msg:'please fill in all fields!!!'});
        }
        if(password.length<6){
@@ -23,7 +23,7 @@ router.get('/signup',(req,res)=>{
        }
        if(errors.length>0){
              res.render('signup',{
-               errors,name,email,phone,password
+               errors,name,email,phone,typo,password
               });
        }
        else{
@@ -32,7 +32,7 @@ router.get('/signup',(req,res)=>{
             if(user){
               errors.push({msg:'email already exist!!!'});
               res.render('signup',{
-                errors,name,email,phone,password
+                errors,name,email,phone,typo,password
                });
             }
             else{
@@ -40,6 +40,7 @@ router.get('/signup',(req,res)=>{
                 name,
                 email,
                 phone,
+                typo,
                 password
                });
                //Hash password
@@ -73,5 +74,6 @@ router.get('/signup',(req,res)=>{
   req.flash('success_msg', 'You are logged out');
   res.redirect('/user/signin');
 });
+
 
  module.exports=router;
