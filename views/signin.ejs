@@ -31,7 +31,20 @@
 </head>
 
 <body>
-   <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark pl-5 fixed-top bg-success">
+            <img src="/images/DocsApp.png" alt="docsapp" width=50 height=50>
+          <a href="/" class="navbar-brand pl-2">DocsAtHome
+          </a>
+          
+          <!--<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>-->
+          <div class="collapse navbar-collapse" id="myMenu">
+           
+           
+          </div>
+        </nav>
+   <div class="container-fluid" style="background-image: url('/imgs/3.jpg');padding-top:1%;padding-bottom:4%;">
       <div class="row justify-content-center custom-margin">
          <div class="col-sm-6 col-md-4">
             <!-- Add bg-primary in form tag if want form background color-->
@@ -50,9 +63,9 @@
                      class="form-control" placeholder="Password" name="password">
                </div>
               
-               <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">Login</button>
-               <p>----------------------------------------------------------</p>
-               <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold"><a href="/user/signup">Signup</a></button>
+               <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">Log In</button>
+              <br/><p style="text-align: center;">OR</p>
+              <a href="/user/signup" style="text-decoration: none; color:rgb(50, 50, 214)"><button type="button" class="btn btn-outline-primary mt-3 btn-block shadow-sm font-weight-bold">Sign Up</button></a>
             </form>
          </div>
       </div>

@@ -17,55 +17,51 @@
            .custom-margin {
               margin-top: 5vh;
            }
-     
-           /* If you add background image it will look like transparent form*/
-           /* body {
-              background-image: url('bgimage.jpg');
-              background-repeat: no-repeat;
-              width: 100%;
-              height: 100%;
-           }*/
+           
         </style>
      
-  <title>Signup Form</title>
+  <title>Doctor's Details</title>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-image: url('/imgs/bg101.jpg'); ">
+	<div class="col-md-1"><a href="/dashboard" style="color: rgb(5, 41, 41);font-size: 20px;font-weight: bold;">Back</a><span style="color: brown;">&nbsp;|&nbsp;</span><a href="/user/logout" style="font-size: 20px;font-weight: bold;">Logout</a></div>
         <div class="row justify-content-center custom-margin">
-           <div class="col-sm-6 col-md-4">
+           <div class="col-sm-6 col-md-5">
               <!-- Add bg-primary in form tag if want form background color-->
               <!--text-white if want text color white-->
               
-              <form class="shadow-lg p-4 text-white bg-dark"  method="post" action="docprofile">
-                 
+              <form class="shadow-lg p-4 text-white"  method="post" action="/doctor/docprofile" style="background-color: rgba(49, 49, 49, 0.74); margin-top: -36px;">
+                <input type="hidden" id="current_id" name="did" value="<%=user[0]._id%>">
                   <div class="form-group"> 
-                        <h2 class="text-center">Doctor's Details</h2>
+                        <h2 class="text-center">Fill up Your Details</h2>
                         <% include ../partials/messages%> 
                     <i class="fas fa-envelope"></i><label for="fname" class="pl-2 font-weight-bold">First Name:</label><input type="text"
-                       class="form-control" placeholder="abc" name="fname" value="<% typeof fname !='undefined' ? fname:''%>">
+                       class="form-control" placeholder="Name" name="fname"  value="<% typeof fname !='undefined' ?fname:''%>">
                   </div>
-
-                  <div class="form-group">  
+                  <div class="form-group"> 
                    
-                        <i class="fas fa-user"></i><label for="lname" class="pl-2 font-weight-bold">Last Name:</label><input type="text"
-                           class="form-control" placeholder="xyz" name="lname" value="<% typeof lname !='undefined' ?lname:''%>">
-                      </div>
+                <i class="fas fa-envelope"></i><label for="lname" class="pl-2 font-weight-bold">Last Name:</label><input type="text"
+                   class="form-control" placeholder="Surname" name="lname"  value="<% typeof lname !='undefined' ?lname:''%>">
+              </div>
 
                       <div class="form-group">  
-                   
-                            <i class="fas fa-user"></i><label for="sex" class="pl-2 font-weight-bold">Sex:</label><input type="user"
-                               class="form-control" placeholder="M/F/O" name="sex" value="<% typeof sex !='undefined' ?sex:''%>">
-                          </div>
+                           <i class="fas fa-envelope"></i><label for="email" class="pl-2 font-weight-bold">Sex:</label>
+                       <select class="custom-select" name="sex">
+                             <option selected>Choose...</option>
+                             <option value="Male">Male</option>
+                             <option value="Female">Female</option>
+                           </select>
+                     </div>
 
                           <div class="form-group">  
                    
                                 <i class="fas fa-user"></i><label for="age" class="pl-2 font-weight-bold">Age:</label><input type="user"
-                                   class="form-control" placeholder="21.." name="age" value="<% typeof age !='undefined' ?age:''%>">
+                                   class="form-control" placeholder="How old are you?" name="age" value="<% typeof age !='undefined' ?age:''%>">
                               </div>
                   <div class="form-group">  
                         <i class="fas fa-user"></i><label for="Category" class="pl-2 font-weight-bold">Category:</label><input type="user"
-                           class="form-control" placeholder="Ayurveda..." name="category" value="<% typeof category !='undefined' ?category:''%>">
+                           class="form-control" placeholder="Specialized in category" name="category" value="<% typeof category !='undefined' ?category:''%>">
                       </div>
                     <div class="form-group">  
                             <div class="input-group mb-3">
@@ -81,14 +77,15 @@
                                   </div>
                       </div>
                       <div class="form-group">  
-                        <i class="fas fa-envelope"></i><label for="experience" class="pl-2 font-weight-bold">Experience:</label><input type="text"
-                           class="form-control" placeholder="1,2,3.." name="experience" value="<% typeof experience !='undefined' ? experience:''%>">
+                        <i class="fas fa-envelope"></i><label for="experience" class="pl-2 font-weight-bold">Experience:(in yrs)</label><input type="text"
+                           class="form-control" placeholder="Your years of practice" name="experience" value="<% typeof experience !='undefined' ? experience:''%>">
                       </div>
                       <div class="form-group">  
-                        <i class="fas fa-envelope"></i><label for="address" class="pl-2 font-weight-bold">Address:</label><input type="textarea"
-                           class="form-control" placeholder="xyz street,Prayagraj..." name="address" value="<% typeof address !='undefined' ?address:''%>">
+                        <i class="fas fa-envelope"></i><label for="address" class="pl-2 font-weight-bold">Address:</label><textarea
+                           class="form-control" placeholder="Permanent Address" name="address" value="<% typeof address !='undefined' ?address:''%>"></textarea>
                       </div>
-                       <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">Submit</button>
+                      <input type="hidden" id="user_id" name="id" value=<%user.id%>>
+                       <button type="submit" class="btn btn-outline-warning mt-3 btn-block shadow-sm font-weight-bold">Submit</button>
               </form>
             </div>
         </div>

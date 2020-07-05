@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 var Schema= mongoose.Schema;
 
 const DoctorSchema = new mongoose.Schema({
+  did:{
+   type:String,
+   require:true
+  },
   fname: {
     type: String,
     required:true

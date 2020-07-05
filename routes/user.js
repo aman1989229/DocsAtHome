@@ -1,7 +1,9 @@
+const express = require('express');
 var router = require('express').Router();
 var User= require('../models/user');
 var bcrypt=require('bcrypt');
 var passport=require('passport');
+
 
 router.get('/signup',(req,res)=>{
   res.render('signup');

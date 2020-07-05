@@ -18,7 +18,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/style.css">
-  <title>DocsatHome</title>
+  <title>Docs At Home</title>
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="716ce1b2-42d0-4099-8a20-66ec23f4fd87";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+  <link href="https://fonts.googleapis.com/css?family=Tinos&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Start Nagigation -->
@@ -26,7 +28,7 @@
       <img src="/images/DocsApp.png" alt="docsapp" width=50 height=50>
     <a href="/" class="navbar-brand pl-2">DocsAtHome
     </a>
-    <span class="navbar-text pl-5">Over 30 Lakh patients helped</span>
+    
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,11 +37,11 @@
        
         <li class="nav-item"><a href="#Services" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="#Team" class="nav-link">Team</a></li>
-        <li class="nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
+        
       </ul>
       <ul class="navbar-nav pl-5 custom-nav ml-auto">
         <li class="nav-item"><a class="btn btn-light mr-4" href="/user/signin" role="button">Login</a>
-        <li class="nav-item"><a class="btn btn-danger" href="/user/signup" role="button">Signup</a>
+        <li class="nav-item"><a class="btn btn-warning" href="/user/signup" role="button">Signup</a>
       </ul>
     </div>
   </nav> <!-- End Navigation -->
@@ -49,7 +51,7 @@
     <div class="text-left-center" style="margin-top: 120px;">
       <h1 class="text-uppercase text-danger font-weight-bold">Talk to a specialist doctor</h1>
       <p class="font-italic font-weight-bold st ">privately from top hospitals</p>
-      <a href="#Contact" class="btn btn-outline-danger btn-lg active mr-6">Talk To Doctor</a>
+      <a href="/user/signin" class="btn btn-outline-danger btn-lg active mr-6">Talk To Doctor</a>
     </div>
   </header> <!-- End Header Jumbotron -->
 
@@ -63,17 +65,17 @@
 
 
   <div class="container-fluid bdr1 text-center border-bottom text-primary mt-5" id="Services"> 
-    <h2 class="mt-4">How does it work?</h2>
+    <h2 class="mt-4" style="text-decoration: underline;color: chocolate;">How does it work?</h2>
     <div>
-    <p><img src="/images/how_it_works_c2.png" alter="" width=1200 height=110></p>
+    <p style="margin-top:20px;"><img src="/images/how_it_works_c2.png" alter="" width=1200 height=110></p>
     <div class="row">
-       <div class="col-sm-3 ">Explain your health issue
+       <div class="col-sm-3 ">Fill Details of Patient
       </div>
-      <div class="col-sm-3">Upload image of problem
+      <div class="col-sm-3">Explain Your Health Issue
         </div>
-        <div class="col-sm-3">talk to doctor at 60% late fee
+        <div class="col-sm-3">Talk to Doctor 
           </div>
-          <div class="col-sm-3 ml-auto">Get digital prescription
+          <div class="col-sm-3 ml-auto">Get The Prescription
             </div>
     </div>
   </div> 
@@ -81,25 +83,26 @@
     <!-- Start Team  -->
   <div class="jumbotron bg-dark mt-5" id="Team">   <!-- Start Team Jumbotron -->
     <div class="container">     <!-- Start Team Container -->
-      <h2 class="text-center text-white">Team</h2>    <!-- Team Heading-->
+      <h2 class="text-center text-white" style="text-decoration: underline;">Our Team</h2>    <!-- Team Heading-->
       <div class="row mt-5">    <!-- Start Team Row-->
+        <div class="col-lg-2 col-sm-4"> </div>
         <div class="col-lg-3 col-sm-6">     <!-- Start Team 1st Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="/images/avtar1.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Rahul Kumar</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam.</p>
+              <img src="/images/avtar1.jpg" class="img-fluid" style="border-radius: 100px;width:120px;height: 150px">
+              <h4 class="card-title" style="font-family: 'Tinos', serif;color: brown;">Aman Shrivas</h4>
+              <p class="card-text"></p>
             </div>
           </div>
         </div>    <!-- End Team 1st Column-->
-      <div></div>
+      
 
         <div class="col-lg-3 col-sm-6">     <!-- Start Team 2nd Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="/images/avtar2.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Sonam Sharma</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam.</p>
+              <img src="/images/avtar2.jpeg" class="img-fluid" style="border-radius: 100px;width:120px;height: 150px">
+              <h4 class="card-title" style="font-family: 'Tinos', serif;color: brown;">Shivani Chaurasia</h4>
+              <p class="card-text"></p>
             </div>
           </div>
         </div>      <!-- End Team 2nd Column-->
@@ -107,62 +110,59 @@
         <div class="col-lg-3 col-sm-6">       <!-- Start Team 3rd Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="/images/avtar3.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Sumit Vyas</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam.</p>
+              <img src="/images/kratika.jpeg" class="img-fluid" style="border-radius: 100px;width:120px;height: 150px">
+              <h4 class="card-title" style="font-family: 'Tinos', serif;color: brown;">Kratika Parmar</h4>
+              <p class="card-text"></p>
             </div>
           </div>
         </div>       <!-- End Team 3rd Column-->
 
-        <div class="col-lg-3 col-sm-6">        <!-- Start Team 4th Column-->
-          <div class="card shadow-lg mb-2">
-            <div class="card-body text-center">
-              <img src="/images/avtar4.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Jyoti Sinha</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam.</p>
-            </div>
-          </div>
-        </div>     <!-- End Team 4th Column-->
+           <!-- End Team 4th Column-->
+
+        <div class="col-lg-4 col-sm-8" style="margin-right:25px;"></div>
+        
+
       </div>    <!-- End Team Row-->
     </div>  <!-- End Team Container -->
   </div> <!-- End Team Jumbotron -->
 
-  <!--Start Contact Us-->
+ 
+
+  <!-- Start Footer-->
+  <footer class="container-fluid bg-dark text-white mt-5" style="border-top: 3px solid #DC3545;">
+     <!--Start Contact Us-->
   <div class="container" id="Contact"> <!--Start Contact Us Container-->
-    <h2 class="text-center mb-4">Contact US</h2>    <!-- Contact Us Heading -->
+    <h2 class="text-center mb-4" style="text-decoration: underline;">Contact US</h2>    <!-- Contact Us Heading -->
     <div class="row">           <!--Start Contact Us Row-->
-      <div class="col-md-8">    <!--Start Contact Us 1st Column-->
-        <form action="#" method="post">
+      <div class="col-md-4">    <!--Start Contact Us 1st Column-->
+        <!--<form action="#" method="post">
           <input class="form-control" name="name" placeholder="Name" /><br />
           <input class="form-control" name="phone" placeholder="Phone" /><br />
           <input class="form-control" name="email" placeholder="E-mail" /><br />
           <textarea class="form-control" name="text" placeholder="How can we help you?" style="height:150px;"></textarea><br />
           <input class="btn btn-primary" type="submit" value="Send" /><br /><br />
-        </form>
+        </form>-->
       </div>  <!-- End Contact Us 1st Column-->
 
       <div class="col-md-4 text-center">    <!-- Start Contact Us 2nd Column-->
         <strong>Address:</strong> <br>
-        DocsAtHome, Tower D - 3rd Floor, <br>
-        Diamond District ISRO Colony, <br>
-        Domlur, Bengaluru,<br>
-         Karnataka - 560008<br>
-         Phone: 237461<br> 
+        DocsAtHome, MNNIT Campus, <br>
+        Near Teliarganj, <br>
+        Allahabad, Prayagraj,<br>
+         Uttar Pradesh - 211004<br>
+         Phone: 8896408668<br> 
         <a href="#" target="_blank"> <i class="fas fa-envelope-square"></i>help@docsathome.in</a> <br>
     
         <br><br>
-        <strong>Kolkata Branch:</strong> <br>
+        <!--<strong>Other Branch:</strong> <br>
         Iliyano Ltd, <br>
         Sec V, Kolkata <br>
         WB - 804002 <br>
         Phone: 635582 <br> 
-        <a href="#" target="_blank"><i class="fas fa-envelope-square"></i>help@docsathome.in</a> <br>
+        <a href="#" target="_blank"><i class="fas fa-envelope-square"></i>help@docsathome.in</a> <br>-->
       </div>    <!-- End Contact Us 2nd Column-->
     </div>    <!-- End Contact Us Row-->
   </div>  <!-- End Contact Us Container-->    <!-- End Contact Us -->
-
-  <!-- Start Footer-->
-  <footer class="container-fluid bg-dark text-white mt-5" style="border-top: 3px solid #DC3545;">
     <div class="container">   <!-- Start Footer Container -->
       <div class="row py-3">    <!-- Start Footer Row -->
         <div class="col-md-6">      <!-- Start Footer 1st Column -->

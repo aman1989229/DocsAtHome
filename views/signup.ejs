@@ -31,7 +31,17 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark pl-5 fixed-top bg-success">
+            <img src="/images/DocsApp.png" alt="docsapp" width=50 height=50>
+          <a href="/" class="navbar-brand pl-2">DocsAtHome
+          </a>
+          
+          <div class="collapse navbar-collapse" id="myMenu">
+           
+           
+          </div>
+        </nav>
+        <div class="container-fluid" style="background-image: url('/imgs/3.jpg');padding-top:2.5%;">
         <div class="row justify-content-center custom-margin">
            <div class="col-sm-6 col-md-4">
               <!-- Add bg-primary in form tag if want form background color-->
@@ -41,7 +51,7 @@
                  <div class="form-group">  
                    <h2 class="text-center">Sign up</h2>
                    <% include ./partials/messages%>
-                    <i class="fas fa-user"></i><label for="name" class="pl-2 font-weight-bold">Name</label><input type="user"
+                    <i class="fas fa-user"></i><label for="name" class="pl-2 font-weight-bold">Username:</label><input type="user"
                        class="form-control" placeholder="Name" name="name" value="<% typeof name !='undefined' ? name:''%>">
                   </div>
                   <div class="form-group">  
@@ -53,6 +63,7 @@
                            class="form-control" placeholder="Phone" name="phone" value="<% typeof phone !='undefined' ? phone:''%>">
                       </div>
                       <div class="form-group">  
+                           <i class="fas fa-circle"></i><label for="phone" class="pl-2 font-weight-bold">Register for</label>
                            <select class="custom-select" name="typo">
                                  <option selected>Choose...</option>
                                  <option value="Doctor">Doctor</option>
@@ -65,8 +76,8 @@
                        </div>
                        
                        <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">SIGN UP</button>
-                       <p>----------------------------------------------------------</p>
-               <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold"><a href="/user/signin">Signin</a></button>
+                       <p style="text-align: center;">OR</p>
+                       <a href="/user/signin" style="text-decoration: none;"><button type="button" class="btn btn-outline-primary mt-3 btn-block shadow-sm font-weight-bold">SIGN IN</button></a>
               </form>
             </div>
         </div>
