@@ -2,6 +2,7 @@ var passport = require('passport')
  LocalStrategy = require('passport-local').Strategy;
  const mongoose=require('mongoose');
  const bcrypt= require('bcrypt');
+ const GoogleStrategy = require('passport-google-oauth').Strategy;
 
  const User=require('../models/user');
 
@@ -37,4 +38,9 @@ var passport = require('passport')
           done(err, user);
         });
       });
+
+      
+
+
+
  }

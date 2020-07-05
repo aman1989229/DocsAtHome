@@ -10,6 +10,8 @@ AdminBro.registerAdapter(AdminBroMongoose)
 const adminBro = new AdminBro({
   databases: [mongoose],
   rootPath: '/admin',
+  branding: {
+    companyName: 'DocsAtHome',}
 })
 
 const ADMIN = {
@@ -27,5 +29,6 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     return null
   }
 })
+
 
 module.exports=router;

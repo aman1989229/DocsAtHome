@@ -1,12 +1,73 @@
 var router = require('express').Router();
-var User= require('../models/user');
-var bcrypt=require('bcrypt');
-var passport=require('passport');
+const User = require('../models/user');
+const Doctor = require('../models/doctor');
+const Speciality = require('../models/speciality');
+var async=require('async');
 
+//Special case starts here-----------------
+router.get('/profile/:id',(req,res,next)=>{
 
-router.get('/profile',(req,res)=>{
-    res.render('doctor.profile');
+   async.waterfall([
+       function(callback){
+        User.find({_id: req.params.id},(err,user)=>{
+            if(err) return next(err);
+            callback(null,user);
+        });
+       },
+       function(user,callback){
+        Speciality.find((err,docs)=>{
+            res.render("doctor/profile",{
+                list:docs ,
+                user:user
+            })
+              
+        });
+       },
+   ]);
+   
     });
 
+//Special case end here--------------------
 
-    module.exports=router;
+    router.post('/docprofile',(req,res)=>{
+    
+        const{did,fname,lname,sex,age,category,speciality,experience,address}=req.body;
+
+                 let newuser =new Doctor({
+                   did,
+                  fname,
+                  lname,
+                  sex,
+                  age,
+                  category,
+                  speciality,
+                  experience,
+                  address
+                  });
+                  //Hash password
+                
+                    newuser.save()
+                    .then(user =>{
+                        
+                      res.redirect('/dashboard');
+                    })
+                    .catch(err =>console.log(err));
+                  
+            
+         });
+      
+         router.get('/profile1',(req,res)=>{
+          User.find((err,docs)=>{
+            if(!err){
+              res.render("dashboard",{
+                list:docs
+              });
+            }
+              else{
+                console.log('error in retrieving data');
+              }
+          });
+             
+        });
+
+ module.exports=router;
